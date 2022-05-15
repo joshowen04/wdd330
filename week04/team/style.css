@@ -1,0 +1,26 @@
+#gameWrapper {
+    display: grid;
+    row-gap: 0;
+    column-gap: 0;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 300px 300px 300px;
+    
+}
+.square {
+    border: solid;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.x, .o {
+    align-self: center;
+    display: none;
+}
+#player1 {
+    display: block;
+}
+
+#player2 {
+    display: none;
+}
+

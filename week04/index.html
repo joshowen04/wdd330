@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,7 @@
     <script defer src="js/week.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
     <main>
         <h1>WDD 330 Portfolio</h1>
@@ -16,16 +17,113 @@
         <h3>links:</h3>
         <ul>
 
-            <li><a href=""></a></li>
+            <li><a href="team/toe.html">Team</a></li>
+            <li><a href="search/search.html">Search</a></li>
+            <li><a href="hero/hero.html">Hero</a></li>
+            <li><a href="../quiz/index.html">Quiz</a></li>
         </ul>
         <h3>Notes:</h3>
         <ul>
-            <li></li>
+            <li>The form.submit() method will submit the form automatically. Note that submitting a form using this
+                method won’t trigger the form submit event that's covered in the next section.</li>
+            <li>hero.powers = [...form.powers].filter(box => box.checked).map(box => box.value); form.powers is made
+                into an array. they are checkbox objects. the filter command gets each 'box' element and keeps only the
+                checked one. and then map is called with that same array but instead of whole object, only the value is
+                kept.</li>
+            <li>objects with variable properties need a constructor or Class declaration</li>
+            <li>Copying an object without the new object just referencing the original, use the "constructor": const
+                greenDice = new redDice.constructor(10); </li>
+            <li>"static" methods are not available to instances of the class.</li>
+            <li>
+                <p>> class Turtle {</p>
+                <p>... constructor(name,color) {</p>
+                <p>..... this.name = name;</p>
+                <p>..... let _color = color;</p><strong>
+                    <p>..... this.setColor = (color) => {</p>
+                    <p> ....... if(typeof color === 'string'){</p>
+                    <p> ......... return _color = color;</p>
+                    <p> ......... } else {</p>
+                    <p> ......... throw new Error('Color must be a string');</p>
+                    <p> ......... }</p>
+                    <p> ....... }</p>
+                </strong>
+                <p> ..... this.getColor = () => _color;</p>
+                <p> ..... }</p>
+                <p> ... }</p>
+            </li>
+            <li>Adding something to Array that is apparently missing in JS<p>class myArray extends Array {</p>
+                <p> constructor(...args){</p>
+                <p> super(...args);</p>
+                <p> }</p>
+                <p> delete(i) {</p>
+                <p> return this.splice(i,1);</p>
+                <p> }</p>
+                <p>}</p>
+            </li>
+            <li>
+                <h4>mixin</h4>
+                <p>function mixin(target,...objects) {</p>
+                <p> for (const object of objects) { </p>
+                <p> if(typeof object === 'object') {</p>
+                <p> for (const key of Object.keys(object)) {</p>
+                <p> if (typeof object[key] === 'object') {</p>
+                <p> target[key] = Array.isArray(object[key]) ? [] : {};</p>
+                <p> mixin(target[key],object[key]);</p>
+                <p> } else {</p>
+                <p> Object.assign(target,object); </p>
+                <p> }</p>
+                <p> }</p>
+                <p> }</p>
+                <p> }</p>
+                <p> return target;</p>
+                <p>}</p>
+            </li>
+            <li>
+                <h4>copy</h4>
+                <p>function copy(target) {</p>
+                <p> const object = Object.create(Object.getPrototypeOf(target));</p>
+                <p> mixin(object,target);</p>
+                <p> return object;</p>
+                <p>}</p>
+            </li>
+            <li>
+                <h4>factory</h4>
+                <p>function createSuperhuman(...mixins) {</p>
+                <p> const object = copy(Superhuman);</p>
+                <p> return mixin(object,...mixins);</p>
+                <p>}</p>
+
+            </li>
+            <li>
+                <h4>Issues with THIS</h4>
+                <p>
+                    Use that = this -- A common solution is to set the variable that to equal thisbefore the nested
+                    function, and refer to that in the nested function instead of this. Here is the example again, using
+                    that:</p>
+                <p>You might also see self or _this used to maintain scope in the same way.</p>
+                <p>for of </p>
+                <p>arrow functions</p>
+            </li>
+            <li>Only inherit once</li>
+            <li>keep classes 'skinny'</li>
         </ul>
         <h3>Questions</h3>
         <ul>
-            <li></li>
+            <li>
+                <p>The turtle class in the OOP in Javascript chapter is first created with a weapon and attack, I tried
+                    setting them to something different with the prototype. No errors, but when I called the weapon and
+                    attack they showed Hands.</p>
+                <p> I then redid it without adding them in the original declaration and was able to add hands and then
+                    feet and it changed accordingly</p>
+            </li>
+            <img src="images/prototype1.png" alt="prototype1.png">
+            <img src="images/prototype2.png" alt="prototype2.png">
+            <li>There seems to be an error in the prototype chain seciont</li>
+            <img src="images/prototype3.png" alt="protchain">
+            <li>Supposedly it should be:</li>
+            <img src="images/prototype4.png" alt="example">
         </ul>
     </main>
 </body>
+
 </html>
