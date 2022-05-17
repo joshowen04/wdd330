@@ -1,11 +1,11 @@
 {
-  "name": "quiz-ninja",
+  "name": "quiz",
   "version": "1.0.0",
-  "description": "A JavaScript quiz.",
-  "main": "main.js",
+  "description": "Quiz Project",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --progress --color --profile"
   },
   "keywords": [
     "quiz",
@@ -17,9 +17,14 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.5",
+    "babel-minify-webpack-plugin": "^0.3.1",
     "babel-preset-env": "^1.7.0",
-    "babili-webpack-plugin": "^0.1.2",
+    "babel-preset-minify": "^0.5.2",
+    "babel-webpack-plugin": "^0.1.2",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "core-js": "^3.22.5"
   }
 }
