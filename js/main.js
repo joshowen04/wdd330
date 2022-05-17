@@ -23,12 +23,12 @@ const links = [
         label: "Week 4 Notes",
         url: "week04/index.html"
     }
-    //,
-    // {
-    //     name: "week5",
-    //     label: "Week 5 Notes",
-    //     url: "week05/index.html"
-    // }
+    ,
+    {
+        name: "week5",
+        label: "Week 5 Notes",
+        url: "week05/index.html"
+    }
     //,
     // {
     //     name: "week6",
