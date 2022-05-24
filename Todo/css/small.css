@@ -1,0 +1,44 @@
+body {
+    margin:auto;
+    width: 600px;
+}
+
+#background,#headerimg {
+    border-radius: 20px;
+    width:600px;
+}
+header{
+    width:600px;
+    margin:auto;
+}
+main{
+    margin:auto;
+    max-width: 100%;
+}
+#background{
+    position:absolute;
+    z-index: -1;
+}
+
+.content{
+    font-size: 2em;
+}
+#tasks {
+    border-style:dotted;
+    border-color: blue;
+    position:relative;
+    width:600px;
+    margin:0px;
+    padding:0px;
+}
+#input{
+    position:relative;
+}
+
+.hidden{
+    display:none;
+}
+
+li {
+    list-style: none;
+}
