@@ -15,10 +15,13 @@ export default class ToDo {
     addTaskButton.addEventListener("click", (e) => {
       e.preventDefault();
       let task = this.formElement.addTaskInput.value;
-      this.tasklist.add(task);
-      //   tasklist.add(task);
-      this.populateList();
-      this.formElement.reset();
+      console.log(task.length);
+      if (task.length != 0){
+        this.tasklist.add(task);
+        //   tasklist.add(task);
+        this.populateList();
+        this.formElement.reset();
+      }
     });
   }
   buildFilterButtons() {
