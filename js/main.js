@@ -29,12 +29,17 @@ const links = [
         label: "Week 5 Notes",
         url: "week05/index.html"
     }
-    //,
-    // {
-    //     name: "week6",
-    //     label: "Week 6 Notes",
-    //     url: "week06/index.html"
-    // }
+    ,
+    {
+        name: "week6",
+        label: "Week 6 Notes",
+        url: "week06/index.html"
+    },
+    {
+        name: "todo",
+        label: "ToDo Project",
+        url: "Todo/todo.html"
+    }
     //,
     // {
     //     name: "week7",

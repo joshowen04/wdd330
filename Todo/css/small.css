@@ -1,11 +1,24 @@
 body {
     margin:auto;
     width: 600px;
+    font-family:Arial, Helvetica, sans-serif;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
 }
 
-#background,#headerimg {
-    border-radius: 20px;
+#headerimg {
+    border-radius: 20px 20px 0px 0px ;
+    padding:0px;
     width:600px;
+}
+#background {
+    border-radius: 0px 0px 20px 20px  ;
+    padding: 0px;
+    width:600px;
+    margin-top:-10px;
+    position:absolute;
+    z-index: -1;
 }
 header{
     width:600px;
@@ -15,30 +28,109 @@ main{
     margin:auto;
     max-width: 100%;
 }
-#background{
-    position:absolute;
-    z-index: -1;
-}
 
 .content{
-    font-size: 2em;
+    font-size: 1.5em;
+    text-align: center;
+    padding-left:.5em;
+    padding-right:.5em;
 }
 #tasks {
-    border-style:dotted;
-    border-color: blue;
+    /* border-style:dotted;
+    border-color: blue; */
     position:relative;
     width:600px;
     margin:0px;
     padding:0px;
+    color:white;
+    font-size:1.5em;
+    font-style: italic;
 }
 #input{
     position:relative;
+    display:grid;
+    grid-template-columns: auto 3.5em;
+    align-items: center;
+    justify-items: center;
+    margin:5px;
+    padding:5px;
+
+}
+input[type=text] {
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    text-align: center;
+    padding:.5em;
+    width:300px;
 }
 
+#addTaskButton{
+    height:3em;
+    margin:10px
+    
+}
 .hidden{
     display:none;
+    transition: 2s
 }
 
 li {
     list-style: none;
 }
+
+#tasks img{
+    height:1.5em;
+    
+}
+
+#tasks li{
+    cursor: pointer;
+    margin:10px;
+    display:grid;
+    grid-template-columns: 30px 1fr 30px;
+}
+
+#filter{
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+#filter img{
+    margin:10px;
+    height:3em;
+}
+
+
+
+/*from w3schools */
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    cursor: pointer;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    top: -5px;
+    left: 70%;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
