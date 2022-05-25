@@ -1,32 +1,45 @@
+
 body {
-    margin:auto;
-    width: 600px;
+    max-width: 600px;
+    margin: auto;
     font-family:Arial, Helvetica, sans-serif;
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
 }
 
+header{
+    max-width:100%;
+    margin:auto;
+}
 #headerimg {
     border-radius: 20px 20px 0px 0px ;
     padding:0px;
-    width:600px;
+    max-width:100%;
+    margin:auto;
 }
+
+main {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px  60px 3fr;
+}
+
 #background {
     border-radius: 0px 0px 20px 20px  ;
     padding: 0px;
-    width:600px;
     margin-top:-10px;
-    position:absolute;
-    z-index: -1;
+    max-width: 100%;
+    z-index:-1
 }
-header{
-    width:600px;
-    margin:auto;
+#backgrounddiv{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end:4;
+    z-index:-1
 }
+
 main{
     margin:auto;
-    max-width: 100%;
+    max-width: 600px;
 }
 
 .content{
@@ -35,25 +48,42 @@ main{
     padding-left:.5em;
     padding-right:.5em;
 }
+#formHome{
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end:1;
+    z-index: 2;
+}
 #tasks {
     /* border-style:dotted;
     border-color: blue; */
-    position:relative;
-    width:600px;
+    max-width:100%;
     margin:0px;
     padding:0px;
-    color:white;
     font-size:1.5em;
     font-style: italic;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end:4;
+    z-index:2;
 }
 #input{
-    position:relative;
-    display:grid;
-    grid-template-columns: auto 3.5em;
+    /* display:grid;
+    grid-template-columns: 3fr 1fr; */
+    display:flex;
+    flex-direction: column;
     align-items: center;
-    justify-items: center;
+    align-content: center;
+    justify-content: center;
     margin:5px;
     padding:5px;
+    max-width: 100%;
 
 }
 input[type=text] {
@@ -61,7 +91,8 @@ input[type=text] {
     border-color: rgb(255, 255, 255);
     text-align: center;
     padding:.5em;
-    width:300px;
+    max-width:100%;
+    flex-grow: 1;
 }
 
 #addTaskButton{
@@ -78,19 +109,29 @@ li {
     list-style: none;
 }
 
-#tasks img{
-    height:1.5em;
-    
-}
-
 #tasks li{
+    grid-row:3;
+    z-index:2;
     cursor: pointer;
     margin:10px;
-    display:grid;
-    grid-template-columns: 30px 1fr 30px;
+    display:flex;
+    flex-direction: row;
+    flex-grow: 1;
+    
 }
-
+#tasks li span{
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    flex-grow: 1;
+    
+}
 #filter{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end:3;
     display:flex;
     flex-direction: row;
     align-content: center;
@@ -122,8 +163,7 @@ li {
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-    top: -5px;
-    left: 70%;
+    top: -15px;
    
     /* Position the tooltip text - see examples below! */
     position: absolute;

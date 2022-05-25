@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List | Joshua Owen | WDD 330 </title>
-    
-    
+
+
     <!-- css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel='stylesheet' href='css/small.css'>
 
     <!-- javascript -->
     <!-- <script defer src="js/ls.js"></script> -->
-    
-    
+
+
 </head>
+
 <body>
 
     <header>
-        <img id="headerimg" src="images/pexels-mart-production-600.jpg" alt="Photo by MART PRODUCTION: https://www.pexels.com/photo/a-to-do-list-on-a-clipboard-7718755/">
+        <img id="headerimg" src="images/pexels-mart-production-600.jpg"
+            alt="Photo by MART PRODUCTION: https://www.pexels.com/photo/a-to-do-list-on-a-clipboard-7718755/">
     </header>
 
     <main>
-        <img id="background" src="images/pexels-omar-zetina-12046302-mountain-1200.jpg" alt="Photo by Omar Zetina from Pexels">
+            <div id="backgrounddiv">
+            <img id="background" src="images/pexels-omar-zetina-12046302-mountain-1200.jpg"
+                alt="Photo by Omar Zetina from Pexels">
+            </div>
         <div id="formHome">
             <form id="input">
                 <label for='addTaskInput'>
-                <input id='addTaskInput' type='text' name='addTaskInput' placeholder="Wash the car" autofocus required></label>
-                <input id="addTaskButton" type="image" src="images/greenplusbutton-62.png" alt="Add Task" width="48" height="48">
+                    <input id='addTaskInput' type='text' name='addTaskInput' placeholder="Wash the car" autofocus
+                        required></label>
+                <input id="addTaskButton" type="image" src="images/greenplusbutton-62.png" alt="Add Task" width="48"
+                    height="48">
                 <!--<button id="addTaskButton" type='submit'>Add Task</button>-->
             </form>
         </div>
-        <div class="tooltip" id="filter"><img id='filterPending' src="images/greencircle-62.png" alt="Filter Pending"><img id='filterCompleted' src="images/greencheck-62.png" alt="Filter Completed"><img id='filterALL' src="images/greencirlecheck-62.png" alt="Filter All"><span class="tooltiptext">Filter Results</span></div>
+        <div class="tooltip" id="filter"><img id='filterPending' src="images/greencircle-62.png"
+                alt="Filter Pending"><img id='filterCompleted' src="images/greencheck-62.png"
+                alt="Filter Completed"><img id='filterALL' src="images/greencirlecheck-62.png" alt="Filter All"><span
+                class="tooltiptext">Filter Results</span></div>
         <div id="tasks">
 
         </div>
@@ -40,9 +51,7 @@
 
 
     </main>
-    <footer>
-
-    </footer>
     <script src="js/ToDos.js" type="module"></script>
 </body>
+
 </html>
