@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,7 @@
     <script defer src="js/week.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
     <main>
         <h1>WDD 330 Portfolio</h1>
@@ -16,11 +17,37 @@
         <h3>links:</h3>
         <ul>
 
-            <li><a href=""></a></li>
+            <li><a href="team/hiking-complete.html">team</a></li>
         </ul>
         <h3>Notes:</h3>
         <ul>
-            <li></li>
+            <li>IIFE </br>
+                (function(){</br>
+                const temp = 'World';</br>
+                console.log(`Hello ${temp}`);</br>
+                })();</br>
+                << 'Hello World' </li>
+            <li>Destructuring</br>
+                let [a,b] = [1,2];</br>
+                [a,b] = [b,a];
+            </li>
+            <li>Variables in ES6 can be declared in blocks as well to make sure they aren't conflicting with global
+                variables.</li>
+            <li>
+                async function loadGame(userName) {</br>
+                </br>
+                try {</br>
+                const user = await login(userName);</br>
+                const info = await getPlayerInfo (user.id);</br>
+                // load the game using the returned info</br>
+                }</br>
+                </br>
+                catch (error){</br>
+                throw error;</br>
+                }</br>
+                }
+
+            </li>
         </ul>
         <h3>Questions</h3>
         <ul>
@@ -28,4 +55,5 @@
         </ul>
     </main>
 </body>
+
 </html>

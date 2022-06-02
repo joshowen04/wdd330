@@ -40,12 +40,12 @@ const links = [
         label: "ToDo Project",
         url: "Todo/todo.html"
     }
-    //,
-    // {
-    //     name: "week7",
-    //     label: "Week 7 Notes",
-    //     url: "week07/index.html"
-    // }
+    ,
+    {
+        name: "week7",
+        label: "Week 7 Notes",
+        url: "week07/index.html"
+    }
     //,
     // {
     //     name: "week8",
