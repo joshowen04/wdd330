@@ -1,0 +1,43 @@
+/* input {
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    padding-left: 15px;
+}
+input:required {
+    background-image: url('../images/required.png');
+}
+input:focus:invalid { 
+    background-image: url('../images/invalid.png');
+} 
+input:focus:valid { 
+    background-image: url('../images/valid.png');
+} */
+
+
+form {
+    box-shadow: 
+    inset 1px 1px 84px rgba(0,0,0,0.24), 
+    inset -1px -1px 84px rgba(0,0,0,0.24);
+}
+h1, h2 {
+    text-transform: uppercase;
+    text-shadow: 1px 1px #FFFFFF;
+}
+:not(article) > header h2 {
+    text-transform: lowercase;
+    text-shadow: 1px 1px #FFFFFF;
+}
+
+aside p + a {
+    display: block;
+    text-decoration: none;
+    border: 5px double;
+    color: #ffffff; 
+    background-color: #484848; 
+    text-align: center;
+    font-size: 1.75rem;
+    margin: 5px 5px 9px 5px;
+    padding: 15px 0;
+    position: relative;
+    text-shadow: 0 0 1px currentColor;
+}
