@@ -1,43 +1,60 @@
-/* input {
-    background-position: 0% 50%;
-    background-repeat: no-repeat;
-    padding-left: 15px;
-}
-input:required {
-    background-image: url('../images/required.png');
-}
-input:focus:invalid { 
-    background-image: url('../images/invalid.png');
-} 
-input:focus:valid { 
-    background-image: url('../images/valid.png');
-} */
-
-
-form {
-    box-shadow: 
-    inset 1px 1px 84px rgba(0,0,0,0.24), 
-    inset -1px -1px 84px rgba(0,0,0,0.24);
-}
-h1, h2 {
-    text-transform: uppercase;
-    text-shadow: 1px 1px #FFFFFF;
+h1,
+h2 {
+  text-transform: uppercase;
+  text-shadow: 1px 1px #ffffff;
 }
 :not(article) > header h2 {
-    text-transform: lowercase;
-    text-shadow: 1px 1px #FFFFFF;
+  text-transform: lowercase;
+  text-shadow: 1px 1px #ffffff;
 }
 
 aside p + a {
-    display: block;
-    text-decoration: none;
-    border: 5px double;
-    color: #ffffff; 
-    background-color: #484848; 
-    text-align: center;
-    font-size: 1.75rem;
-    margin: 5px 5px 9px 5px;
-    padding: 15px 0;
-    position: relative;
-    text-shadow: 0 0 1px currentColor;
+  display: block;
+  text-decoration: none;
+  border: 5px double;
+  border-radius: 25px;
+  color: #ffffff;
+  background-color: #484848;
+  text-align: center;
+  font-size: 1.75rem;
+  margin: 5px 5px 9px 5px;
+  padding: 15px 0;
+  position: relative;
+  box-shadow: 2px 5px 0 0 rgba(72, 72, 72, 1);
+  text-shadow: 0 0 1px currentColor;
+}
+
+input[type="submit"] {
+  border-radius: 10%;
+  background-clip: padding-box;
+}
+
+form {
+  box-shadow: inset 1px 1px 84px rgba(0, 0, 0, 0.24),
+    inset -1px -1px 84px rgba(0, 0, 0, 0.24);
+}
+
+.ad-ad3 {
+  background-image: url(../images/gradient.svg);
+  /* Gradient syntax for WebKit */
+  background-image: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.4) 0,
+    transparent 37%,
+    transparent 83%,
+    rgba(0, 0, 0, 0.06) 92%,
+    transparent 98%
+  );
+  /* Unprefixed W3C syntax */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0,
+    transparent 37%,
+    transparent 83%,
+    rgba(0, 0, 0, 0.06) 92%,
+    transparent 98%
+  );
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  padding-bottom: 10px;
 }
