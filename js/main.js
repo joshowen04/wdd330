@@ -52,12 +52,12 @@ const links = [
         label: "Week 8 Notes",
         url: "week08/index.html"
     }
-    //,
-    // {
-    //     name: "week9",
-    //     label: "Week 9 Notes",
-    //     url: "week09/index.html"
-    // }
+    ,
+    {
+        name: "week9",
+        label: "Week 9 Notes",
+        url: "week09/index.html"
+    }
     //,
     // {
     //     name: "week10",

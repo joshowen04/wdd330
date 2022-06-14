@@ -1,0 +1,42 @@
+#square {
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+    background: #d16;
+}
+
+#square2 {
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+    background: #d16;
+    animation: slidein steps(50, start) infinite 1.0s, move linear infinite 8s;
+}
+
+#square3 {
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+    background: #d16;
+}
+#square4 {
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+    background: #cc0;
+    animation: spin 4s linear infinite;
+}
+
+
+@keyframes slidein {
+    from {
+      transform: translateX(0%);
+    }
+  
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+
+@keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(3600deg); } }

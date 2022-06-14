@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 330-03 | Joshua Owen | Week 1</title>
+    <title>WDD 330-03 | Joshua Owen | Week 9</title>
     <script defer src="js/week.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -16,15 +16,53 @@
         <h3>links:</h3>
         <ul>
 
-            <li><a href=""></a></li>
+            <li><a href="team/team.html">Team</a></li>
+            <li><a href="../week08/herald/index.html">Herald</a></li>
+            <li><a href="animation/index.html">Animation</a></li>
+            <li><a href="factors/factors.html">Factors</a></li>
+            <li><a href="websocket/websocket.html">websocket</a></li>
         </ul>
+
+        <video src='media/video/marciana.mp4' controls>
+            Your browser does not support the video element.
+        </video>
+        <canvas id='canvas' width='400' height='400'>Sorry, but your browser does not support the canvas element</canvas>
         <h3>Notes:</h3>
         <ul>
-            <li></li>
+            <li>The order of transform functions does matter</li>
+            <li>If you don’t know the name of the global object, you can also refer to it using the keyword <em>this</em> in the global scope.
+            <li>const cookies = document.cookie.split("; "); </li>
+            <li></br>const expiryDate = new Date(); </br>
+                const tomorrow = expiryDate.getTime() + 1000 * 60 * 60 * 24;</br>
+                expiryDate.setTime(tomorrow);</br>
+            </br>
+                document.cookie = `name=Batman; expires=${ expiryDate.toUTCString()}`;<br>
+            <br>
+            document.cookie = 'name=Batman; max-age=86400' </li>
+            <li>for Chapter 14. the websocket url was discontinued, I found a similar service here:<br>
+                https://www.lob.com/blog/websocket-org-is-down-here-is-an-alternative<br>
+                <br>
+                instead of: const URL = 'wss://echo.websocket.org/';<br>
+                <br>
+                we can use:<br>
+                <br>
+                const URL = 'wss://echo.websocket.events/';</li>
+                <li>Notification: <br>
+                    if(window.Notification) { <br>
+                    Notification.requestPermission()<br>
+                    .then((permission) => {<br>
+                        if(Notification.permission === 'granted') {<br>
+                        new Notification('Hello JavaScript!');<br>
+                        }<br>
+                    });<br>
+                }
+                </li>
         </ul>
         <h3>Questions</h3>
         <ul>
-            <li></li>
+            <li>I read earlier that local storage shouldn't be used for user or sensitive data. </br> but this is saying cookies are similar to localstorage but can hold information like session data. </br> 
+                Are cookies what's used to 'sign in' to a webpage? why are they ok if that's true? </br> 
+                document.cookie = 'name=Superman';   === localStorage.setItem('name', 'Superman');</li>
         </ul>
     </main>
 </body>
