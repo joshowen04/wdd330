@@ -261,17 +261,23 @@ function shuffle(array) {
   }
   return array;
 }
-// this.wordsURL =
-// "https://joshowen04.github.io/wdd330/jasmineFlash/data/data.json";
-// this.word = word;
 
-// fetch(this.wordsURL)
-// .then((response) => response.json())
-// .then((data) => {(this.wordlist = data);
-//   this.word = this.wordlist.words[0].word
-//   this.directory = this.word.charAt(0);
-//   // this.url = `https://www.dictionaryapi.com/api/v3/references/learners/json/${this.word}?key=${key}`;
-//   return this.word
-// }
-// )
-// .then()
+/*
+done:
+	calling the word, audio, description or sentence, and edited pictures
+	first trials of showing pictures and word in page
+	added event listeners so audio working and pictures are clickable
+
+	confirmAnswer to check if correct answer
+	it's looping when answer is correct
+
+
+to do:
+	add definition/sentence on screen
+	animate buttons and pictures with transform css
+	fix sizing issues
+	create try again popup/page
+	maybe try and remove duplicates from images.
+
+
+*/
