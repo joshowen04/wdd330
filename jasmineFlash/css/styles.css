@@ -1,5 +1,5 @@
 body {
-    width:600px;
+    max-width:600px;
     margin:auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
@@ -23,7 +23,7 @@ h2 {
   
 #cards {
     display:grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     text-align: center;
     align-content: center;
     border-style: solid;
@@ -71,6 +71,12 @@ h2 {
 }
 
 #images div {
-    margin:0;
-    padding:0;
+    max-width:100%;
+    margin:.25em;
+    padding:.25em;
+}
+
+
+img {
+    max-width:100%;
 }
