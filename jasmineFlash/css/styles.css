@@ -1,0 +1,76 @@
+body {
+    width:600px;
+    margin:auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+h1 {
+    border-bottom: 1.5px solid rgb(37, 37, 37); 
+    padding-bottom: 25px; 
+    padding-top: 30px; 
+    font-family: sans-serif;
+    text-align: center; 
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size:3em;
+}
+
+
+
+  
+#cards {
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    text-align: center;
+    align-content: center;
+    border-style: solid;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 80%;
+    /* position: relative; */
+    margin: auto;
+  }
+
+#cards div{
+    display:flex;
+    overflow: hidden;
+    justify-content: right;
+}
+
+#audioButton {
+    align-items: center;
+    align-content: center;
+}
+
+
+.placeholder {
+    border-style: solid;
+    border-radius: 20px;
+    overflow: hidden;
+    /* margin:.25em; */
+}
+
+#images{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width:80%;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    /* border-style: solid;
+    border-radius: 20px; */
+    overflow: hidden;
+    /* position: relative; */
+    margin: auto;
+    margin-top:1em;
+    padding:0;
+}
+
+#images div {
+    margin:0;
+    padding:0;
+}
