@@ -230,12 +230,20 @@ export default class Word {
     let clickedImage = e.target.id
     if(clickedImage === this.word){
         console.log("You're right")
+        let word = new Word();
     }
     else{
         console.log("Try again")
     }
     
   }
+  correct(){
+
+  }
+  incorrect(){
+
+  }
+
 }
 
 function randomIndex(min, max) {
