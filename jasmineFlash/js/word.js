@@ -125,7 +125,12 @@ let wordList = [
   {
     word: "no",
     image: "no.jpg",
-  },
+  }
+//   ,
+//   {
+//     word: "heart",
+//     image: "https://www.merriam-webster.com/assets/mw/static/art/dict/heart.gif"
+//   }
 ];
 
 export default class Word {
@@ -142,6 +147,7 @@ export default class Word {
       //fetch(`https://www.dictionaryapi.com/api/v3/references/sd3/json/cat?key=${intermediatekey}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         //console.log(this.audio);
         // let art = data[0]["artl"][0]["artid"];
         // art = art.split(".")[0]
