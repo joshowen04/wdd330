@@ -1,153 +1,145 @@
 const learnerskey = "a16b71df-b80e-4b6e-a0b7-4d9c0861a382";
 const intermediatekey = "088c99d2-0feb-489c-9de3-b63d2736f465";
 
-let wordList = [
-  {
-    word: "cat",
-    image: "cat.jpg",
-  },
-  {
-    word: "dog",
-    image: "dog.jpg",
-  },
-  {
-    word: "apple",
-    image: "apple.jpg",
-  },
-  {
-    word: "boy",
-    image: "boy.jpg",
-  },
-  {
-    word: "girl",
-    image: "girl.jpg",
-  },
-  {
-    word: "man",
-    image: "man.jpg",
-  },
-  {
-    word: "woman",
-    image: "woman.jpg",
-  },
-  {
-    word: "baby",
-    image: "baby.jpg",
-  },
-  {
-    word: "hello",
-    image: "hello.jpg",
-  },
-  {
-    word: "bye",
-    image: "bye.jpg",
-  },
-  {
-    word: "happy",
-    image: "happy.jpg",
-  },
-  {
-    word: "mad",
-    image: "mad.jpg",
-  },
-  {
-    word: "walk",
-    image: "walk.jpg",
-  },
-  {
-    word: "old",
-    image: "old.jpg",
-  },
-  {
-    word: "one",
-    image: "one.jpg",
-  },
-  {
-    word: "two",
-    image: "two.jpg",
-  },
-  {
-    word: "three",
-    image: "three.jpg",
-  },
-  {
-    word: "four",
-    image: "four.jpg",
-  },
-  {
-    word: "five",
-    image: "five.jpg",
-  },
-  {
-    word: "six",
-    image: "six.jpg",
-  },
-  {
-    word: "seven",
-    image: "seven.jpg",
-  },
-  {
-    word: "eight",
-    image: "eight.jpg",
-  },
-  {
-    word: "nine",
-    image: "nine.jpg",
-  },
-  {
-    word: "ten",
-    image: "ten.jpg",
-  },
-  {
-    word: "rain",
-    image: "rain.jpg",
-  },
-  {
-    word: "eat",
-    image: "eat.jpg",
-  },
-  {
-    word: "up",
-    image: "up.jpg",
-  },
-  {
-    word: "down",
-    image: "down.jpg",
-  },
-  {
-    word: "sleep",
-    image: "sleep.jpg",
-  },
-  {
-    word: "yes",
-    image: "yes.jpg",
-  },
-  {
-    word: "no",
-    image: "no.jpg",
-  }
 //   ,
 //   {
 //     word: "heart",
 //     image: "https://www.merriam-webster.com/assets/mw/static/art/dict/heart.gif"
-//   }
+
+let wordList = [
+  "cat",
+  "dog",
+  "apple",
+  "boy",
+  "girl",
+  "man",
+  "woman",
+  "baby",
+  "hello",
+  "bye",
+  "happy",
+  "mad",
+  "walk",
+  "old",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+  "rain",
+  "eat",
+  "up",
+  "down",
+  "sleep",
+  "yes",
+  "no",
+  // ,
+  // "the",
+  // "of",
+  // "and",
+  // "to",
+  // "in",
+  // "you",
+  // "that",
+  // "it",
+  // "he",
+  // "for",
+  // "on",
+  // "as",
+  // "with",
+  // "his",
+  // "they",
+  // "at",
+  // "be",
+  // "this",
+  // "from",
+  // "have",
+  // "or",
+  // "by",
+  // "not",
+  // "but",
+  // "what",
+  // "all",
+  // "when",
+  // "we",
+  // "there",
+  // "can",
+  // "an",
+  // "your",
+  // "which",
+  // "their",
+  // "if",
+  // "do",
+  // "will",
+  // "each",
+  // "about",
+  // "how",
+  // "out",
+  // "them",
+  // "then",
+  // "she",
+  // "many",
+  // "some",
+  // "so",
+  // "would",
+  // "other",
+  // "into",
+  // "more",
+  // "her",
+  // "like",
+  // "him",
+  // "see",
+  // "time",
+  // "could",
+  // "make",
+  // "than",
+  // "first",
+  // "its",
+  // "who",
+  // "now",
+  // "people",
+  // "my",
+  // "over",
+  // "down",
+  // "only",
+  // "way",
+  // "find",
+  // "use",
+  // "may",
+  // "water",
+  // "long",
+  // "little",
+  // "very",
+  // "after",
+  // "just",
+  // "where",
+  // "most",
+  // "know"
 ];
 
 export default class Word {
   constructor() {
+    this.title = document.querySelector("h1");
+    this.title.focus();
     this.wordList = wordList;
     this.index = randomIndex(0, this.wordList.length);
-    this.wordObj = this.wordList[this.index];
-    this.word = this.wordObj["word"];
-    this.image = this.wordObj["image"];
+    this.word = this.wordList[this.index];
+    this.image = `${this.word}.jpg`;
     this.directory = this.word.charAt(0);
+    this.images = document.querySelector("#images");
+
     fetch(
       `https://www.dictionaryapi.com/api/v3/references/learners/json/${this.word}?key=${learnerskey}`
     )
       //fetch(`https://www.dictionaryapi.com/api/v3/references/sd3/json/cat?key=${intermediatekey}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         //console.log(this.audio);
         // let art = data[0]["artl"][0]["artid"];
         // art = art.split(".")[0]
@@ -187,69 +179,98 @@ export default class Word {
         return wordData;
       })
       .then((wordData) => {
-        console.log(wordData);
+        //console.log(wordData);
         let word = document.querySelector("#word");
         let audioButton = document.querySelector("#audioButton");
         let audioSrc = document.querySelector("#audioSrc");
-        let images = document.querySelector("#images");
-        images.innerHTML = "";
+        this.images.innerHTML = "";
 
         let index = 0;
         let indexes = [this.index];
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; indexes.length < 4; i++) {
           index = randomIndex(0, this.wordList.length);
-          indexes.push(index);
+          
+          //make sure we're not repeating any pictures.
+          if (!indexes.includes(index)) {
+            indexes.push(index);
+          }
         }
-        console.log(indexes);
+        //console.log(indexes);
         indexes = shuffle(indexes);
-        console.log(indexes);
+        //console.log(indexes);
 
         indexes.forEach((index) => {
           let div = document.createElement("div");
-          let image = document.createElement("img");
-          image.classList.add("placeholder");
-          let imagesrc = this.wordList[index]["image"];
-          let imageword = this.wordList[index]["word"];
-          image.classList.add("wrong");
-          image.setAttribute("src", `./images/200_${imagesrc}`);
-          image.setAttribute("id", `${imageword}`);
-          image.addEventListener("click",this.confirmAnswer.bind(this))
-          div.appendChild(image);
-          images.appendChild(div);
-        });
 
-        //   let image = document.createElement("img")
-        //   image.classList.add("placeholder")
-        //   image.setAttribute("src",`./images/200_${this.image}`);
-        //   image.setAttribute("id",`${this.word}`)
-        //   image.addEventListener("click",function() {
-        //       console.log("checking correct answer")
-        //   })
-        //   images.appendChild(image);
+          let imagesrc = `${this.wordList[index]}.jpg`;
+          imagesrc = `./images/200_${imagesrc}`;
+          let imageword = this.wordList[index];
+
+          let image = document.createElement("img");
+          div.appendChild(image);
+
+          checkIfImageExists(imagesrc, (exists) => {
+            if (exists) {
+              image.src = imagesrc;
+              image.classList.add("placeholder");
+              /*image.classList.add("wrong");*/
+
+              image.setAttribute("id", `${imageword}`);
+              image.addEventListener("click", this.confirmAnswer.bind(this));
+            } else {
+              let wordText = document.createElement("h2");
+              wordText.textContent = imageword;
+              wordText.classList.add("placeholder");
+              /*wordText.classList.add("wrong");*/
+
+              wordText.setAttribute("id", `${imageword}`);
+              wordText.addEventListener("click", this.confirmAnswer.bind(this));
+
+              div.replaceChild(wordText, image);
+              // console.error('Image does not exists.')
+            }
+          });
+          this.images.appendChild(div);
+        });
 
         audioSrc.setAttribute("src", `${wordData[4]}`);
         audioButton.addEventListener("click", () => audioSrc.play());
         word.textContent = wordData[0];
       });
   }
-  confirmAnswer(e){
-    let clickedImage = e.target.id
-    if(clickedImage === this.word){
-        console.log("You're right")
-        let word = new Word();
+  confirmAnswer(e) {
+    let clickedImage = e.target.id;
+    if (clickedImage === this.word) {
+      console.log("correct");
+      e.target.classList.add("correct");
+      this.correct();
+    } else {
+      this.incorrect(e);
+      console.log("Try again");
     }
-    else{
-        console.log("Try again")
-    }
-    
   }
-  correct(){
-
+  correct() {
+    let word = new Word();
   }
-  incorrect(){
-
+  incorrect(e) {
+    e.target.classList.add("incorrect");
   }
+}
+function checkIfImageExists(url, callback) {
+  const img = new Image();
+  img.src = url;
 
+  if (img.complete) {
+    callback(true);
+  } else {
+    img.onload = () => {
+      callback(true);
+    };
+
+    img.onerror = () => {
+      callback(false);
+    };
+  }
 }
 
 function randomIndex(min, max) {

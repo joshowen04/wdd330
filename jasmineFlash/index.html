@@ -12,9 +12,17 @@
 
 <body>
     <header>
-        <h1>Flash Cards for Jasmine</h1>
+        <h1>Flash Cards</h1>
     </header>
     <main>
+        <a id="signIn" href="#">Sign In</a>
+        <div id="signInDiv">
+            <form action="submit">
+                <label for="fname">First name:
+                <input type="text" id="fname" name="fname"></label>
+                <input id="submitBtn" type="submit" value="Sign In">
+                </form>
+        </div>
         <div id="cards">
             <h2 id="word">Loading...</h2>
             <div><img id="audioButton" src="./images/150_audiobutton.jpg"

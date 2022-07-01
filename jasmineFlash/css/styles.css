@@ -7,15 +7,15 @@ body {
 
 h1 {
     border-bottom: 1.5px solid rgb(37, 37, 37); 
-    padding-bottom: 25px; 
-    padding-top: 30px; 
+    /* padding-bottom: 25px;  */
+    /* padding-top: 30px;  */
     font-family: sans-serif;
     text-align: center; 
-    font-size: 2.2em;
+    font-size: 3em;
 }
 
 h2 {
-    font-size:3em;
+    font-size:2.5em;
 }
 
 
@@ -50,13 +50,13 @@ h2 {
     border-style: solid;
     border-radius: 20px;
     overflow: hidden;
-    /* margin:.25em; */
+    max-width:100%;
 }
 
 #images{
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    row-gap: 0px;
     max-width:80%;
     align-items: center;
     text-align: center;
@@ -66,17 +66,29 @@ h2 {
     overflow: hidden;
     /* position: relative; */
     margin: auto;
-    margin-top:1em;
+    /*margin-top:1em;*/
     padding:0;
 }
 
 #images div {
     max-width:100%;
-    margin:.25em;
-    padding:.25em;
+    /*margin-bottom:-50px;*/
+    
 }
 
 
 img {
     max-width:100%;
+}
+
+.correct{
+    transition: all .1s ease;
+    border-color: green;
+    border-width: 5px;
+}
+
+.incorrect{
+    transition: all .1s ease;
+    border-color: red;
+    border-width: 5px;
 }
