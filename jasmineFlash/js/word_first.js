@@ -1,7 +1,11 @@
 const learnerskey = "a16b71df-b80e-4b6e-a0b7-4d9c0861a382";
 const intermediatekey = "088c99d2-0feb-489c-9de3-b63d2736f465";
 
-const mainurl = "https://www.dictionaryapi.com/api/v3/references/learners/json/"
+//   ,
+//   {
+//     word: "heart",
+//     image: "https://www.merriam-webster.com/assets/mw/static/art/dict/heart.gif"
+
 let wordList = [
   "apple",
   "boy",
@@ -151,35 +155,62 @@ export default class Word {
     this.title = document.querySelector("h1");
     this.title.focus();
     this.wordList = wordList;
-    this.wordElement = document.querySelector("#word");
-    this.audioButton = document.querySelector("#audioButton");
-    this.audioSrc = document.querySelector("#audioSrc");
-    this.fail = document.querySelector("#fail");
-    this.win = document.querySelector("#win");
-
-
-  }
-  chooseWord(){
     this.index = randomIndex(0, this.wordList.length);
     this.word = this.wordList[this.index];
+    this.image = `${this.word}.jpg`;
+    this.directory = this.word.charAt(0);
     this.images = document.querySelector("#images");
-  }
-  async getWordData(word){
-    const data = await makeRequest(mainurl,word);
-      
-    const audio = await data[0]["hwi"]["prs"][0]["sound"]["audio"];
-    const directory = word.charAt(0);
-    const audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${directory}/${audio}.mp3`;
-    const image = `${word}.jpg`;
-  
-    this.wordData = [
-      word,
-      image,
-      audioURL,
-    ];
-    return this.wordData
-  }
-    view(){
+
+    fetch(
+      `https://www.dictionaryapi.com/api/v3/references/learners/json/${this.word}?key=${learnerskey}`
+    )
+      //fetch(`https://www.dictionaryapi.com/api/v3/references/sd3/json/cat?key=${intermediatekey}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        //console.log(this.audio);
+        // let art = data[0]["artl"][0]["artid"];
+        // art = art.split(".")[0]
+        // let artURL = `http://www.learnersdictionary.com/art/ld/${art}.jpg`
+        // console.log(art, artURL)
+
+        try {
+          this.def = data[0]["def"][0]["sseq"][0][0][1]["dt"][0][1]
+            .replace(/{(..)}/gi, "")
+            .replace(/{(...)}/gi, "");
+        } catch {
+          this.def = "";
+          console.log(`${this.word} doesn't have def`);
+        }
+        try {
+          this.vis = data[0]["def"][0]["sseq"][0][0][1]["dt"][1][1][0]["t"]
+            .replace(/{(..)}/gi, "")
+            .replace(/{(...)}/gi, "");
+        } catch {
+          this.vis = "";
+          console.log(`${this.word} doesn't have vis`);
+        }
+        try {
+          this.audio = data[0]["hwi"]["prs"][0]["sound"]["audio"];
+          this.audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${this.directory}/${this.audio}.mp3`;
+          //console.log(this.audioURL);
+        } catch {
+          console.log(`${this.word} doesn't have audio`);
+        }
+        let wordData = [
+          this.word,
+          this.image,
+          this.def,
+          this.vis,
+          this.audioURL,
+        ];
+        return wordData;
+      })
+      .then((wordData) => {
+        //console.log(wordData);
+        let word = document.querySelector("#word");
+        let audioButton = document.querySelector("#audioButton");
+        let audioSrc = document.querySelector("#audioSrc");
         this.images.innerHTML = "";
 
         let index = 0;
@@ -223,9 +254,6 @@ export default class Word {
               wordText.setAttribute("id", `${imageword}`);
               wordText.addEventListener("click", this.confirmAnswer.bind(this));
 
-              wordText.style.backgroundColor = `${imageword}`
-              wordText.style.color = `${imageword}`
-              wordText.style.height = "150px"
               div.replaceChild(wordText, image);
               // console.error('Image does not exists.')
             }
@@ -233,36 +261,29 @@ export default class Word {
           this.images.appendChild(div);
         });
 
-        this.audioSrc.setAttribute("src", `${this.wordData[2]}`);
-        this.audioButton.addEventListener("click", () => audioSrc.play());
-        this.wordElement.textContent = this.wordData[0];
-      };
+        audioSrc.setAttribute("src", `${wordData[4]}`);
+        audioButton.addEventListener("click", () => audioSrc.play());
+        word.textContent = wordData[0];
+      });
+  }
   confirmAnswer(e) {
     let clickedImage = e.target.id;
     if (clickedImage === this.word) {
       console.log("correct");
       e.target.classList.add("correct");
       this.correct();
-      this.win.currentTime = 0;
-      this.win.play();
     } else {
       this.incorrect(e);
-      this.fail.currentTime = 0;
-      this.fail.play();
       console.log("Try again");
     }
   }
-  async correct() {
-    this.chooseWord()
-    this.view()
-    await this.getWordData(this.word)
-    this.view();
+  correct() {
+    let word = new Word();
   }
   incorrect(e) {
     e.target.classList.add("incorrect");
   }
 }
-
 function checkIfImageExists(url, callback) {
   const img = new Image();
   img.src = url;
@@ -280,7 +301,6 @@ function checkIfImageExists(url, callback) {
   }
 }
 
-
 function randomIndex(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -295,27 +315,6 @@ function shuffle(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
-}
-
-
-async function makeRequest(
-  url,
-  word
-) {
-  const response = await fetch(`${url}${word}?key=${learnerskey}`
-  );
-  // in this case we are processing the response as JSON before we check the status. The API will send back more meaningful error messages than the default messages in the response, but we have to convert it before we can get to them.
-  const data = await response.json();
-
-  if (!response.ok) {
-    // server will send a 500 server error if the token expires...or a 401 if we are not authorized, ie bad username/password combination, and a 404 if the URL we requested does not exist. All of these would cause response.ok to be false
-
-    console.log(response);
-    throw new Error(`${data.status}: ${data.message}`);
-  } else {
-    return data;
-  }
-  // not catching the error here...so we will need to catch it later on and handle it.
 }
 
 /*

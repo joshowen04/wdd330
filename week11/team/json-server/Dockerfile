@@ -1,0 +1,25 @@
+FROM node:16
+ARG NPM_TOKEN 
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY .npmrc .npmrc  
+COPY package*.json ./
+
+COPY database.json ./
+
+RUN npm config set strict-ssl false
+RUN npm install
+
+RUN rm -f .npmrc
+# If you are building your code for production
+# RUN npm ci --only=production
+
+# Bundle app source
+COPY . .
+
+EXPOSE 3000
+CMD npm run start-auth
