@@ -221,7 +221,7 @@ export default class Word {
               /*wordText.classList.add("wrong");*/
 
               wordText.setAttribute("id", `${imageword}`);
-              wordText.addEventListener("click", this.confirmAnswer.bind(this));
+              wordText.addEventListener("touch", this.confirmAnswer.bind(this));
 
               wordText.style.backgroundColor = `${imageword}`
               wordText.style.color = `${imageword}`
@@ -234,7 +234,7 @@ export default class Word {
         });
 
         this.audioSrc.setAttribute("src", `${this.wordData[2]}`);
-        this.audioButton.addEventListener("click", () => this.playAudio(this.audioSrc));
+        this.audioButton.addEventListener("touch", () => this.playAudio(this.audioSrc));
         this.wordElement.textContent = this.wordData[0];
       };
   confirmAnswer(e) {
