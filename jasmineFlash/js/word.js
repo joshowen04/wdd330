@@ -234,7 +234,7 @@ export default class Word {
         });
 
         this.audioSrc.setAttribute("src", `${this.wordData[2]}`);
-        this.audioButton.addEventListener("click", () => audioSrc.play());
+        this.audioButton.addEventListener("click", () => this.playAudio(this.audioSrc));
         this.wordElement.textContent = this.wordData[0];
       };
   confirmAnswer(e) {
@@ -243,14 +243,16 @@ export default class Word {
       console.log("correct");
       e.target.classList.add("correct");
       this.correct();
-      this.win.currentTime = 0;
-      this.win.play();
+      this.playAudio(this.win)
     } else {
       this.incorrect(e);
-      this.fail.currentTime = 0;
-      this.fail.play();
+      this.playAudio(this.fail)
       console.log("Try again");
     }
+  }
+  playAudio(source){
+    source.currentTime=0;
+    source.play()
   }
   async correct() {
     this.chooseWord()
