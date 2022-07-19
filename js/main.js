@@ -82,12 +82,12 @@ const links = [
     //     label: "Week 13 Notes",
     //     url: "week13/index.html"
     // }
-    //,
-    // {
-    //     name: "week14",
-    //     label: "Week 14 Notes",
-    //     url: "week14/index.html"
-    // }
+    ,
+    {
+        name: "week14",
+        label: "Week 14 Notes",
+        url: "week14/index.html"
+    }
 ]
 
 function listlinks() {
