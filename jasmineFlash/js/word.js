@@ -180,10 +180,11 @@ export default class Word {
     return this.wordData
   }
     view(){
-        this.images.innerHTML = "";
-
+      let images = document.querySelectorAll(".placeholder")
         let index = 0;
+        //get the word
         let indexes = [this.index];
+        //add random words to the "indexes"
         for (let i = 0; indexes.length < 4; i++) {
           index = randomIndex(0, this.wordList.length);
           
@@ -195,92 +196,89 @@ export default class Word {
         //console.log(indexes);
         indexes = shuffle(indexes);
         //console.log(indexes);
-
+        let imagesCount = 0;
         indexes.forEach((index) => {
-          let div = document.createElement("div");
+          
+          let currentImage = images[imagesCount];
+          currentImage.innerHTML = ""
+          currentImage.classList.remove("correct");
+          currentImage.classList.remove("incorrect");
+          currentImage.removeAttribute("id");
 
           let imagesrc = `${this.wordList[index]}.jpg`;
           imagesrc = `./images/200_${imagesrc}`;
           let imageword = this.wordList[index];
+          //currentImage.src = imagesrc
 
-          let image = document.createElement("img");
-          div.appendChild(image);
+          currentImage.src = imagesrc;
 
-          checkIfImageExists(imagesrc, (exists) => {
-            if (exists) {
-              image.src = imagesrc;
-              image.classList.add("placeholder");
-              /*image.classList.add("wrong");*/
-
-              image.setAttribute("id", `${imageword}`);
-              image.addEventListener("click", this.confirmAnswer.bind(this));
-            } else {
-              let wordText = document.createElement("h2");
-              wordText.textContent = imageword;
-              wordText.classList.add("placeholder");
-              /*wordText.classList.add("wrong");*/
-
-              wordText.setAttribute("id", `${imageword}`);
-              wordText.addEventListener("touch", this.confirmAnswer.bind(this));
-
-              wordText.style.backgroundColor = `${imageword}`
-              wordText.style.color = `${imageword}`
-              wordText.style.height = "150px"
-              div.replaceChild(wordText, image);
-              // console.error('Image does not exists.')
-            }
-          });
-          this.images.appendChild(div);
+          currentImage.setAttribute("id", `${imageword}`);
+          currentImage.setAttribute("alt",`${imageword}`);
+          //since i'm not recreating the element completely, duplicate event listeners were being created because i'm binding "this".
+          if (!currentImage.getAttribute("listenerAttached")){
+            currentImage.addEventListener("click", this.confirmAnswer.bind(this));
+            currentImage.setAttribute("listenerAttached", true)
+          }
+          //this.images.appendChild(div);
+          imagesCount ++;
         });
-
+        console.log(imagesCount);
         this.audioSrc.setAttribute("src", `${this.wordData[2]}`);
-        this.audioButton.addEventListener("touch", () => this.playAudio(this.audioSrc));
-        this.wordElement.textContent = this.wordData[0];
+        if (!this.audioButton.getAttribute("listenerAttached")){
+          this.audioButton.addEventListener("click", () => this.playAudio(this.audioSrc));
+          this.audioButton.setAttribute("listenerAttached", true)
+        }
+
+        
+        this.wordElement.textContent = this.wordData[0].toUpperCase();
       };
   confirmAnswer(e) {
     let clickedImage = e.target.id;
     if (clickedImage === this.word) {
-      console.log("correct");
-      e.target.classList.add("correct");
-      this.correct();
-      this.playAudio(this.win)
+      console.log("correct",clickedImage,this.word);
+      
+      this.correct(e);
+
     } else {
       this.incorrect(e);
-      this.playAudio(this.fail)
-      console.log("Try again");
+      console.log("incorrect",clickedImage,this.word)
+
     }
   }
   playAudio(source){
+    console.log(source);
     source.currentTime=0;
-    source.play()
+    source.play();
   }
-  async correct() {
-    this.chooseWord()
-    this.view()
-    await this.getWordData(this.word)
+  async correct(e) {
+    e.target.classList.add("correct");
+    this.playAudio(this.win);
+    this.chooseWord();
+    await this.getWordData(this.word);
     this.view();
   }
   incorrect(e) {
     e.target.classList.add("incorrect");
+    this.playAudio(this.fail);
   }
 }
 
-function checkIfImageExists(url, callback) {
-  const img = new Image();
-  img.src = url;
+// function checkIfImageExists(url, callback) {
+//   const img = new Image();
+//   img.src = url;
 
-  if (img.complete) {
-    callback(true);
-  } else {
-    img.onload = () => {
-      callback(true);
-    };
+//   if (img.complete) {
+//     callback(true);
+//   } else {
+//     img.onload = () => {
+//       callback(true);
+//     };
 
-    img.onerror = () => {
-      callback(false);
-    };
-  }
-}
+//     img.onerror = () => {
+//       callback(false);
+//     };
+//   }
+// }
 
 
 function randomIndex(min, max) {
@@ -320,22 +318,67 @@ async function makeRequest(
   // not catching the error here...so we will need to catch it later on and handle it.
 }
 
-/*
-done:
-	calling the word, audio, description or sentence, and edited pictures
-	first trials of showing pictures and word in page
-	added event listeners so audio working and pictures are clickable
-
-	confirmAnswer to check if correct answer
-	it's looping when answer is correct
 
 
-to do:
-	add definition/sentence on screen
-	animate buttons and pictures with transform css
-	fix sizing issues
-	create try again popup/page
-	maybe try and remove duplicates from images.
+// view(){
+//   let images = document.querySelectorAll(".placeholder")
+//   console.log(images)
+//   //this.images.innerHTML = "";
+//     let index = 0;
+//     //get the word
+//     let indexes = [this.index];
+//     //add random words to the "indexes"
+//     for (let i = 0; indexes.length < 4; i++) {
+//       index = randomIndex(0, this.wordList.length);
+      
+//       //make sure we're not repeating any pictures.
+//       if (!indexes.includes(index)) {
+//         indexes.push(index);
+//       }
+//     }
+//     //console.log(indexes);
+//     indexes = shuffle(indexes);
+//     //console.log(indexes);
+//     let imagesCount = 0
+//     indexes.forEach((index) => {
+//       let div = document.createElement("div");
+        
+//       let imagesrc = `${this.wordList[index]}.jpg`;
+//       imagesrc = `./images/200_${imagesrc}`;
+//       let imageword = this.wordList[index];
 
+//       let image = document.createElement("img");
+//       div.appendChild(image);
 
-*/
+//       checkIfImageExists(imagesrc, (exists) => {
+//         if (exists) {
+//           image.src = imagesrc;
+//           image.classList.add("placeholder");
+//           /*image.classList.add("wrong");*/
+
+//           image.setAttribute("id", `${imageword}`);
+//           image.addEventListener("click", this.confirmAnswer.bind(this));
+//         } else {
+//           let wordText = document.createElement("h2");
+//           wordText.textContent = imageword;
+//           wordText.classList.add("placeholder");
+//           /*wordText.classList.add("wrong");*/
+
+//           wordText.setAttribute("id", `${imageword}`);
+//           wordText.addEventListener("click", this.confirmAnswer.bind(this));
+
+//           wordText.style.backgroundColor = `${imageword}`
+//           wordText.style.color = `${imageword}`
+//           wordText.style.height = "150px"
+//           div.replaceChild(wordText, image);
+//           // console.error('Image does not exists.')
+//         }
+//       });
+//       this.images.appendChild(div);
+//       imagesCount ++
+//     });
+//     console.log(imagesCount)
+//     this.audioSrc.setAttribute("src", `${this.wordData[2]}`);
+//     this.audioButton.addEventListener("click", () => this.playAudio(this.audioSrc));
+//     this.wordElement.textContent = this.wordData[0];
+//   };
