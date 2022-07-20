@@ -1,3 +1,6 @@
+import LSUtilities from "./records.js";
+let lsutil = new LSUtilities();
+// localStorage.removeItem("jasmine");
 const learnerskey = "a16b71df-b80e-4b6e-a0b7-4d9c0861a382";
 const intermediatekey = "088c99d2-0feb-489c-9de3-b63d2736f465";
 
@@ -222,7 +225,7 @@ export default class Word {
           //this.images.appendChild(div);
           imagesCount ++;
         });
-        console.log(imagesCount);
+        //console.log(imagesCount);
         this.audioSrc.setAttribute("src", `${this.wordData[2]}`);
         if (!this.audioButton.getAttribute("listenerAttached")){
           this.audioButton.addEventListener("click", () => this.playAudio(this.audioSrc));
@@ -235,32 +238,57 @@ export default class Word {
   confirmAnswer(e) {
     let clickedImage = e.target.id;
     if (clickedImage === this.word) {
-      console.log("correct",clickedImage,this.word);
+      //console.log("correct",clickedImage,this.word);
       
       this.correct(e);
 
     } else {
       this.incorrect(e);
-      console.log("incorrect",clickedImage,this.word)
+      //console.log("incorrect",clickedImage,this.word)
 
     }
   }
   playAudio(source){
-    console.log(source);
+    //console.log(source);
     source.currentTime=0;
     source.play();
   }
   async correct(e) {
     e.target.classList.add("correct");
+    lsutil.add("jasmine",e.target.id)
     this.playAudio(this.win);
-    this.chooseWord();
-    await this.getWordData(this.word);
-    this.view();
+    await this.restart()
   }
   incorrect(e) {
     e.target.classList.add("incorrect");
     this.playAudio(this.fail);
+    //this.displayRetry()
   }
+  async restart(){
+    this.chooseWord();
+    await this.getWordData(this.word);
+    this.view();
+    this.title.focus();
+  }
+  displayRetry(){
+    let retryWindow = document.createElement("div");
+    let cards = document.querySelector("#cards");
+
+    retryWindow.setAttribute("id","retryWindow");
+    let retry = document.createElement("img");
+    retry.id = "retry"
+    retry.src = "./images/200_rotationicon.png";
+
+    let skip = document.createElement("img");
+    skip.id = "skip"
+    skip.src = "./images/200_no.png";
+    retryWindow.appendChild(retry);
+    retryWindow.appendChild(skip);
+    retry.addEventListener("click",() => {cards.removeChild(retryWindow)})
+    skip.addEventListener("click",() => {cards.removeChild(retryWindow); this.restart()})
+    cards.appendChild(retryWindow)
+  }
+
 }
 
 // function checkIfImageExists(url, callback) {
