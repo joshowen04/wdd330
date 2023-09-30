@@ -9,22 +9,21 @@ const mainurl = "https://www.dictionaryapi.com/api/v3/references/spanish/json/"
 
 //const mainurl = "https://www.dictionaryapi.com/api/v3/references/learners/json/"
 let wordList = [
-  // "manzana",
-  // "cabalgata",
+  "cabalgata",
   "bigotudo",
   "album",
   "bipedo",
-  "bocado"
-  // "boleta",
-  // "alba",
-  // "baston",
-  // "bajada",
-  // "doblar",
-  // "boton",
-  // "dictado",
-  // "robar",
-  // "banco",
-  // "mueble"
+  "bocado",
+  "boleta",
+  "alba",
+  "baston",
+  "bajada",
+  "doblar",
+  "boton",
+  "dictado",
+  "robar",
+  "banco",
+  "mueble"
 ];
 
 
@@ -115,6 +114,7 @@ export default class Word {
           let imagesrc = `${this.wordList[index]}.jpg`;
           imagesrc = `./images/200_${imagesrc}`;
           let imageword = this.wordList[index];
+          
           //currentImage.src = imagesrc
 
           currentImage.src = imagesrc;

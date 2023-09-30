@@ -3,7 +3,7 @@ const copywriteyear = document.querySelector(".copywriteyear");
 const d = new Date();
 const year = d.getFullYear();
 
-copywriteyear.textContent += `${year} | WDD330 Final | Joshua Owen | Santiago Chile | Designed for Jasmine`;
+copywriteyear.textContent += `${year} | Dictado Primero A | Joshua Owen | Santiago Chile `;
 
 
 const wordsURL = "https://joshowen04.github.io/wdd330/jasmineFlash/data/data.json";
