@@ -1,0 +1,148 @@
+
+:root {
+    --main-bg-color: #CDB4DB;
+    --accent-color-1: #FFC8DD;
+    --accent-color-2: #FFAFCC;
+    --accent-color-3: #BDE0FE;
+  }
+
+
+html {
+    background-image: url("../images/originals/8472378_rainbow-color-alphabet-background.jpg");
+}
+
+body {
+    max-width:600px;
+    margin:auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: var(--main-bg-color);
+}
+header, footer{
+    background-color: var(--accent-color-1);
+    padding: 10px;
+    overflow: hidden;
+}
+header{
+    border-radius: 0 0 20px 20px;
+    border-bottom: 2px solid var(--accent-color-3);
+}
+footer {
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    border-top: 2px solid var(--accent-color-3);
+}
+footer {
+    font-size: .8em;
+}
+#merriam, #unlimphotos{
+    display:grid;
+    grid-template-columns: 6fr 1fr;
+    align-content: center;
+    justify-items: center;
+}
+
+#unlimphotos img {
+    background-color: white;
+    border-radius: 2px;
+}
+h1 {
+    /* padding-bottom: 25px;  */
+    /* padding-top: 30px;  */
+    font-family: sans-serif;
+    text-align: center; 
+    font-size: 3em;
+}
+
+h2 {
+    font-size:2.5em;
+    
+}
+#cards{
+    background-color: var(--accent-color-2);
+}
+
+
+  
+#cards {
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    text-align: center;
+    align-content: center;
+    border-style: solid;
+    border-radius: 0 0 20px 20px;
+
+    overflow: hidden;
+    max-width: 90%;
+    /* position: relative; */
+    margin: auto;
+
+  }
+
+#audioButtonImg{
+    display:flex;
+    overflow: hidden;
+    justify-content: right;
+}
+
+#audioButton {
+    align-items: center;
+    align-content: center;
+}
+
+
+.placeholder {
+    border-style: solid;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width:100%;
+    margin:10px;
+}
+
+#images{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    row-gap: 0px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    padding:10px;
+
+    overflow: hidden;
+    margin: auto;
+}
+
+#cards, .placeholder{
+    box-shadow: 5px 5px 5px hsl(278,35%,50%);
+    border-color: var(--accent-color-3);
+}
+img {
+    max-width:100%;
+    
+}
+
+.correct{
+    transition: all .1s ease;
+    border-color: green;
+    border-width: 5px;
+}
+
+.incorrect{
+    transition: all .1s ease;
+    border-color: red;
+    border-width: 5px;
+}
+
+#retryWindow{
+    grid-column: 1 / 3;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+}
+
+#skip, #retry{
+    max-width:100px;
+
+}
+
