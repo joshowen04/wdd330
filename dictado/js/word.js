@@ -9,22 +9,22 @@ const mainurl = "https://www.dictionaryapi.com/api/v3/references/spanish/json/"
 
 //const mainurl = "https://www.dictionaryapi.com/api/v3/references/learners/json/"
 let wordList = [
-  "manzana",
-  "cabalgata",
+  // "manzana",
+  // "cabalgata",
   "bigotudo",
   "album",
   "bipedo",
-  "bocado",
-  "boleta",
-  "alba",
-  "baston",
-  "bajada",
-  "doblar",
-  "boton",
-  "dictado",
-  "robar",
-  "banco",
-  "mueble"
+  "bocado"
+  // "boleta",
+  // "alba",
+  // "baston",
+  // "bajada",
+  // "doblar",
+  // "boton",
+  // "dictado",
+  // "robar",
+  // "banco",
+  // "mueble"
 ];
 
 
@@ -51,10 +51,32 @@ export default class Word {
   }
   async getWordData(word){
     const data = await makeRequest(mainurl,word);
-      
-    const audio = await data[0]["hwi"]["prs"][0]["sound"]["audio"];
-    const directory = word.charAt(0);
-    const audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${directory}/${audio}.mp3`;
+    let audio = "";
+    let directory = word.charAt(0);
+    let audioURL = "";
+
+    if (word == "album"){
+      console.log(word)
+      audio = `${word}.mp3`;
+      console.log(audio)
+      audioURL = `./audio/${audio}`;
+      console.log(audio)
+    }
+    else {
+    try{ 
+    audio = await data[0]["hwi"]["prs"][0]["sound"]["audio"];
+    directory = word.charAt(0);
+    audioURL = `https://media.merriam-webster.com/audio/prons/es/me/mp3/${directory}/${audio}.mp3`;
+    console.log(audioURL)
+    }
+    catch(err){
+
+    audio = `${word}.mp3`;
+    console.log(audio)
+    audioURL = `./audio/${audio}`;
+    console.log(audio)
+    }
+  }
     const image = `${word}.jpg`;
   
     this.wordData = [
@@ -116,12 +138,13 @@ export default class Word {
 
         
         this.wordElement.textContent = this.wordData[0].toUpperCase();
+        this.wordElement.style.display = "none";
       };
   confirmAnswer(e) {
     let clickedImage = e.target.id;
     if (clickedImage === this.word) {
       //console.log("correct",clickedImage,this.word);
-      
+      this.wordElement.style.display = "block";
       this.correct(e);
 
     } else {

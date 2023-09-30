@@ -1,145 +1,1194 @@
-{
-    "words": [
-        {
-            "word": "cat",
-            "image": ""
+[
+    {
+        "meta": {
+            "id": "manzana",
+            "uuid": "3fa571a4-d513-4c9c-9871-86461e03d8b8",
+            "lang": "es",
+            "sort": "2614420000",
+            "src": "spanish",
+            "section": "alpha",
+            "stems": [
+                "manzana",
+                "manzana de ad\u00e1n"
+            ],
+            "offensive": false
         },
-        {
-            "word": "dog",
-            "image": ""
+        "hwi": {
+            "hw": "manzana",
+            "prs": [
+                {
+                    "sound": {
+                        "audio": "manza01sp"
+                    }
+                }
+            ]
         },
-        {
-            "word": "apple",
-            "image": ""
+        "fl": "feminine noun",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "sn": "1",
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}{a_link|apple}"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ],
+                    [
+                        [
+                            "sense",
+                            {
+                                "sn": "2",
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{sx|cuadra||} {bc}{a_link|block} (enclosed by streets or buildings)"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ],
+                    [
+                        [
+                            "sense",
+                            {
+                                "sn": "3",
+                                "vrs": [
+                                    {
+                                        "vl": "or",
+                                        "va": "manzana de Ad\u00e1n"
+                                    }
+                                ],
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}{a_link|Adam\u0027s apple}"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "apple",
+            "cuadra : block (enclosed by streets or buildings)",
+            "Adam\u0027s apple"
+        ]
+    }
+]
+[
+    {
+        "meta": {
+            "id": "boy:1",
+            "uuid": "725d371a-eb4b-4e4d-bbdf-ee5bf0348893",
+            "src": "learners",
+            "section": "alpha",
+            "target": {
+                "tuuid": "feabf9e6-5f90-4964-ac76-e6dde5b597c4",
+                "tsrc": "collegiate"
+            },
+            "highlight": "yes",
+            "stems": [
+                "boy",
+                "boyhood",
+                "boyhoods",
+                "boyish",
+                "boyishly",
+                "boyishness",
+                "boyishnesses",
+                "boys",
+                "boys will be boys",
+                "separate the men from the boys",
+                "boy wonder",
+                "my dear boy",
+                "old boy"
+            ],
+            "app-shortdef": {
+                "hw": "boy:1",
+                "fl": "noun",
+                "def": [
+                    "{bc} a male child",
+                    "",
+                    "{bc} a young man"
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "boy",
-            "image": ""
+        "hom": 1,
+        "hwi": {
+            "hw": "boy",
+            "prs": [
+                {
+                    "ipa": "\u02c8bo\u026a",
+                    "sound": {
+                        "audio": "boy00001"
+                    }
+                }
+            ]
         },
-        {
-            "word": "girl",
-            "image": ""
+        "fl": "noun",
+        "ins": [
+            {
+                "il": "plural",
+                "if": "boys"
+            }
+        ],
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sen",
+                            {
+                                "sn": "1",
+                                "sgram": "count"
+                            }
+                        ],
+                        [
+                            "sense",
+                            {
+                                "sn": "a",
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a male child "
+                                    ],
+                                    [
+                                        "vis",
+                                        [
+                                            {
+                                                "t": "It\u0027s a {it}boy{\/it}! She gave birth to a baby {it}boy{\/it} this morning."
+                                            },
+                                            {
+                                                "t": "a nine-year-old {it}boy{\/it} named David"
+                                            },
+                                            {
+                                                "t": "Okay, {it}boys{\/it} and girls, it\u0027s time to play a game."
+                                            },
+                                            {
+                                                "t": "Ever since I was a (little\/young) {it}boy{\/it}, I\u0027ve wanted to fly airplanes."
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            }
+                        ],
+                        [
+                            "sense",
+                            {
+                                "sn": "b",
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}{sx|son||} "
+                                    ],
+                                    [
+                                        "vis",
+                                        [
+                                            {
+                                                "t": "Is this your little {it}boy{\/it}?"
+                                            },
+                                            {
+                                                "t": "He\u0027s our oldest\/youngest {it}boy{\/it}."
+                                            },
+                                            {
+                                                "t": "That\u0027s my {it}boy{\/it}! Good job, Son."
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            }
+                        ]
+                    ],
+                    [
+                        [
+                            "sen",
+                            {
+                                "sn": "2",
+                                "sgram": "count"
+                            }
+                        ],
+                        [
+                            "sense",
+                            {
+                                "sn": "a",
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a young man "
+                                    ],
+                                    [
+                                        "vis",
+                                        [
+                                            {
+                                                "t": "a group of teenage {it}boys{\/it}"
+                                            },
+                                            {
+                                                "t": "My parents want me to meet a nice {it}boy{\/it} and get married."
+                                            },
+                                            {
+                                                "t": "Don\u0027t be so hard on him. He\u0027s just a {it}boy{\/it}."
+                                            },
+                                            {
+                                                "t": "He\u0027s a {it}boy{\/it} genius."
+                                            },
+                                            {
+                                                "t": "a {phrase}boy wonder{\/phrase} [=a young man who has achieved many great things]"
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            }
+                        ],
+                        [
+                            "sense",
+                            {
+                                "sn": "b",
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a usually young man from a specified kind of place "
+                                    ],
+                                    [
+                                        "vis",
+                                        [
+                                            {
+                                                "t": "city\/country {it}boys{\/it} = {it}boys{\/it} from the city\/country"
+                                            },
+                                            {
+                                                "t": "a local\/hometown {it}boy{\/it}"
+                                            },
+                                            {
+                                                "t": "a poor {it}boy{\/it} from the north"
+                                            },
+                                            {
+                                                "t": "a farm {it}boy{\/it} [=a young man who lives and works on a farm]"
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            }
+                        ]
+                    ],
+                    [
+                        [
+                            "sense",
+                            {
+                                "sn": "3 a",
+                                "bnote": "the boys",
+                                "sls": [
+                                    "informal"
+                                ],
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}the male friends or work partners of a man viewed as a group "
+                                    ],
+                                    [
+                                        "vis",
+                                        [
+                                            {
+                                                "t": "Wait till {it}the boys{\/it} back home hear about this!"
+                                            },
+                                            {
+                                                "t": "Our boss thinks of himself as just one of {it}the boys{\/it}."
+                                            },
+                                            {
+                                                "t": "He went out drinking with {it}the boys{\/it}."
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            }
+                        ],
+                        [
+                            "sense",
+                            {
+                                "sn": "b",
+                                "sgram": "singular",
+                                "sls": [
+                                    "chiefly British",
+                                    "old-fashioned"
+                                ],
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a man of any age "
+                                    ],
+                                    [
+                                        "snote",
+                                        [
+                                            [
+                                                "t",
+                                                "The phrases {phrase}my dear boy{\/phrase} and {phrase}old boy{\/phrase} are used as friendly ways for one man to address another man."
+                                            ],
+                                            [
+                                                "vis",
+                                                [
+                                                    {
+                                                        "t": "Why, {it}my dear boy{\/it}, of course I want to see you."
+                                                    },
+                                                    {
+                                                        "t": "Cheer up, {it}old boy{\/it}."
+                                                    }
+                                                ]
+                                            ]
+                                        ]
+                                    ],
+                                    [
+                                        "text",
+                                        "{dx}see also {dxt|old boy||}{\/dx}"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ],
+                    [
+                        [
+                            "sense",
+                            {
+                                "sn": "4",
+                                "sgram": "count",
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a man or boy who does a particular job "
+                                    ],
+                                    [
+                                        "vis",
+                                        [
+                                            {
+                                                "t": "a messenger {it}boy{\/it}"
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        "snote",
+                                        [
+                                            [
+                                                "t",
+                                                "{it}Boy{\/it} is often offensive in this sense when the person being described is an adult."
+                                            ]
+                                        ]
+                                    ],
+                                    [
+                                        "text",
+                                        "{dx}see also {dxt|altar boy||} {dxt|ball boy||} {dxt|batboy||} {dxt|bellboy||} {dxt|busboy||} {dxt|delivery boy||} {dxt|paperboy||}{\/dx}"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "uros": [
+            {
+                "ure": "boy*hood",
+                "prs": [
+                    {
+                        "ipa": "\u02c8bo\u026a\u02cch\u028ad",
+                        "sound": {
+                            "audio": "boy00002"
+                        }
+                    }
+                ],
+                "fl": "noun",
+                "gram": "noncount",
+                "utxt": [
+                    [
+                        "vis",
+                        [
+                            {
+                                "t": "the president\u0027s early {it}boyhood{\/it}"
+                            }
+                        ]
+                    ],
+                    [
+                        "uns",
+                        [
+                            [
+                                [
+                                    "text",
+                                    "often used before another noun "
+                                ],
+                                [
+                                    "vis",
+                                    [
+                                        {
+                                            "t": "his {it}boyhood{\/it} home [=where he lived when he was a boy]"
+                                        },
+                                        {
+                                            "t": "{it}boyhood{\/it} heroes\/friends"
+                                        }
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            },
+            {
+                "ure": "boy*ish",
+                "prs": [
+                    {
+                        "ipa": "\u02c8boj\u026a\u0283",
+                        "sound": {
+                            "audio": "boy00003"
+                        }
+                    }
+                ],
+                "fl": "adjective",
+                "gram": "more ~; most ~",
+                "utxt": [
+                    [
+                        "vis",
+                        [
+                            {
+                                "t": "his {it}boyish{\/it} good looks"
+                            },
+                            {
+                                "t": "He has a {it}boyish{\/it} charm about him."
+                            },
+                            {
+                                "t": "a {it}boyish{\/it} haircut"
+                            },
+                            {
+                                "t": "She\u0027s always had a {it}boyish{\/it} figure."
+                            }
+                        ]
+                    ]
+                ]
+            },
+            {
+                "ure": "boy*ish*ly",
+                "fl": "adverb",
+                "utxt": [
+                    [
+                        "vis",
+                        [
+                            {
+                                "t": "a {it}boyishly{\/it} handsome actor"
+                            }
+                        ]
+                    ]
+                ]
+            },
+            {
+                "ure": "boy*ish*ness",
+                "fl": "noun",
+                "gram": "noncount"
+            }
+        ],
+        "dros": [
+            {
+                "drp": "boys will be boys",
+                "def": [
+                    {
+                        "sseq": [
+                            [
+                                [
+                                    "sense",
+                                    {
+                                        "dt": [
+                                            [
+                                                "snote",
+                                                [
+                                                    [
+                                                        "t",
+                                                        "The expression {it}boys will be boys{\/it} is used to say that it is not surprising or unusual when men or boys behave in energetic, rough, or improper ways."
+                                                    ],
+                                                    [
+                                                        "vis",
+                                                        [
+                                                            {
+                                                                "t": "You shouldn\u0027t be too hard on them for staying out so late. {it}Boys will be boys{\/it}."
+                                                            }
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    }
+                                ]
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "drp": "separate the men from the boys",
+                "def": [
+                    {
+                        "sseq": [
+                            [
+                                [
+                                    "sense",
+                                    {
+                                        "dt": [
+                                            [
+                                                "text",
+                                                "{dx}see {dxt|separate:2||}{\/dx}"
+                                            ]
+                                        ]
+                                    }
+                                ]
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ],
+        "dxnls": [
+            "see also {dxt|bad boy||} {dxt|big boys||} {dxt|good old boy||} {dxt|poster boy||} {dxt|pretty boy||}"
+        ],
+        "shortdef": [
+            "a male child",
+            "son",
+            "a young man"
+        ]
+    },
+    {
+        "meta": {
+            "id": "boy:2",
+            "uuid": "5117e981-ea87-458c-b21f-34100a0c723f",
+            "src": "learners",
+            "section": "alpha",
+            "stems": [
+                "boy"
+            ],
+            "app-shortdef": {
+                "hw": "boy:2",
+                "fl": "interjection",
+                "def": [
+                    "used as a way to express surprise or enthusiasm"
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "man",
-            "image": ""
+        "hom": 2,
+        "hwi": {
+            "hw": "boy",
+            "altprs": [
+                {
+                    "ipa": "\u02c8bo\u026a"
+                }
+            ]
         },
-        {
-            "word": "woman",
-            "image": ""
+        "fl": "interjection",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "dt": [
+                                    [
+                                        "uns",
+                                        [
+                                            [
+                                                [
+                                                    "text",
+                                                    "used as a way to express surprise or enthusiasm "
+                                                ],
+                                                [
+                                                    "vis",
+                                                    [
+                                                        {
+                                                            "t": "{it}Boy{\/it}, I sure am hungry!"
+                                                        },
+                                                        {
+                                                            "t": "{it}Boy{\/it}, have I got a story for you!"
+                                                        },
+                                                        {
+                                                            "t": "There\u0027s a surprise? Oh, {it}boy{\/it}! What is it?"
+                                                        },
+                                                        {
+                                                            "t": "{it}Boy{\/it}, oh, {it}boy{\/it}. This is great!!"
+                                                        },
+                                                        {
+                                                            "t": "{it}Boy{\/it}, that test was really hard."
+                                                        }
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "\u2014used as a way to express surprise or enthusiasm"
+        ]
+    },
+    {
+        "meta": {
+            "id": "Boy Scout",
+            "uuid": "39556f58-852a-466f-8755-2fb1a67f9b14",
+            "src": "learners",
+            "section": "alpha",
+            "target": {
+                "tuuid": "08f3c264-0afa-42d8-a790-d3fcd1225bfd",
+                "tsrc": "collegiate"
+            },
+            "stems": [
+                "boy scout",
+                "boy scouts",
+                "scout"
+            ],
+            "app-shortdef": {
+                "hw": "Boy Scout",
+                "fl": "noun",
+                "def": [
+                    "{bc} a member of an organization for boys ages 11 to 17"
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "baby",
-            "image": ""
+        "hwi": {
+            "hw": "Boy Scout"
         },
-        {
-            "word": "hi",
-            "image": ""
+        "fl": "noun",
+        "ins": [
+            {
+                "il": "plural",
+                "ifc": "~ Scouts",
+                "if": "Boy Scouts"
+            }
+        ],
+        "gram": "count",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a member of an organization for boys ages 11 to 17 "
+                                    ],
+                                    [
+                                        "snote",
+                                        [
+                                            [
+                                                "t",
+                                                "Boy Scouts participate in group activities, learn skills, and are encouraged to have good morals and be good citizens."
+                                            ]
+                                        ]
+                                    ],
+                                    [
+                                        "ca",
+                                        {
+                                            "intro": "called also",
+                                            "cats": [
+                                                {
+                                                    "cat": "Scout"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        "text",
+                                        "{dx}compare {dxt|cub scout||} {dxt|girl scout||}{\/dx}"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "a member of an organization for boys ages 11 to 17 \u2014called also Scout"
+        ]
+    },
+    {
+        "meta": {
+            "id": "altar boy",
+            "uuid": "536dd870-d227-4d94-b6c9-aa8c5f10eca8",
+            "src": "learners",
+            "section": "alpha",
+            "target": {
+                "tuuid": "1b8f26b1-4922-4361-a04b-842f2d202d61",
+                "tsrc": "collegiate"
+            },
+            "stems": [
+                "altar boy",
+                "altar boys"
+            ],
+            "app-shortdef": {
+                "hw": "altar boy",
+                "fl": "noun",
+                "def": [
+                    "{bc} a boy who helps the priest during a Catholic service"
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "bye",
-            "image": ""
+        "hwi": {
+            "hw": "altar boy"
         },
-        {
-            "word": "happy",
-            "image": ""
+        "fl": "noun",
+        "ins": [
+            {
+                "il": "plural",
+                "ifc": "~ boys",
+                "if": "altar boys"
+            }
+        ],
+        "gram": "count",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a boy who helps the priest during a Catholic service"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "a boy who helps the priest during a Catholic service"
+        ]
+    },
+    {
+        "meta": {
+            "id": "bad boy",
+            "uuid": "3e320e42-3c22-4d71-a25d-eb734b2d2d6c",
+            "src": "learners",
+            "section": "alpha",
+            "target": {
+                "tuuid": "02e913b3-eae5-4172-ada1-a4e82f1f396c",
+                "tsrc": "collegiate"
+            },
+            "stems": [
+                "bad boy",
+                "bad boys"
+            ],
+            "app-shortdef": {
+                "hw": "bad boy",
+                "fl": "noun",
+                "def": [
+                    "{bc} a man who says or does things that shock other people {it}especially{\/it} {bc} a young and successful man who does things in a way that is very different from the usual way"
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "sad",
-            "image": ""
+        "hwi": {
+            "hw": "bad boy"
         },
-        {
-            "word": "mad",
-            "image": ""
+        "fl": "noun",
+        "ins": [
+            {
+                "il": "plural",
+                "ifc": "~ boys",
+                "if": "bad boys"
+            }
+        ],
+        "gram": "count",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a man who says or does things that shock other people"
+                                    ]
+                                ],
+                                "sdsense": {
+                                    "sd": "especially",
+                                    "dt": [
+                                        [
+                                            "text",
+                                            "{bc}a young and successful man who does things in a way that is very different from the usual way "
+                                        ],
+                                        [
+                                            "vis",
+                                            [
+                                                {
+                                                    "t": "He has become known as the {it}bad boy{\/it} of the American television industry."
+                                                }
+                                            ]
+                                        ]
+                                    ]
+                                }
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "a man who says or does things that shock other people; especially : a young and successful man who does things in a way that is very different from the usual way"
+        ]
+    },
+    {
+        "meta": {
+            "id": "ball boy",
+            "uuid": "79bc8225-d4b9-4571-9c2b-ffca222e6c17",
+            "src": "learners",
+            "section": "alpha",
+            "target": {
+                "tuuid": "5d252183-9a7a-4b15-b101-c88eba3e878c",
+                "tsrc": "collegiate"
+            },
+            "stems": [
+                "ball boy",
+                "ball boys"
+            ],
+            "app-shortdef": {
+                "hw": "ball boy",
+                "fl": "noun",
+                "def": [
+                    "{bc} a boy who picks up balls that go out of play during a game in tennis, baseball, etc."
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "walk",
-            "image": ""
+        "hwi": {
+            "hw": "ball boy"
         },
-        {
-            "word": "old",
-            "image": ""
+        "fl": "noun",
+        "ins": [
+            {
+                "il": "plural",
+                "ifc": "~ boys",
+                "if": "ball boys"
+            }
+        ],
+        "gram": "count",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a boy who picks up balls that go out of play during a game in tennis, baseball, etc."
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "a boy who picks up balls that go out of play during a game in tennis, baseball, etc."
+        ]
+    },
+    {
+        "meta": {
+            "id": "delivery boy",
+            "uuid": "1ac41c5b-bbad-4d2f-aa2b-0872459df1a1",
+            "src": "learners",
+            "section": "alpha",
+            "target": {
+                "tuuid": "2d370e5e-af08-4c56-8e91-fcf40f27901f",
+                "tsrc": "collegiate"
+            },
+            "stems": [
+                "delivery boy",
+                "delivery boys"
+            ],
+            "app-shortdef": {
+                "hw": "delivery boy",
+                "fl": "noun",
+                "def": [
+                    "{it}somewhat old-fashioned{\/it} {bc} a boy or young man who delivers goods to customers from a store or restaurant"
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "one",
-            "image": ""
+        "hwi": {
+            "hw": "delivery boy"
         },
-        {
-            "word": "two",
-            "image": ""
+        "fl": "noun",
+        "ins": [
+            {
+                "il": "plural",
+                "ifc": "~ boys",
+                "if": "delivery boys"
+            }
+        ],
+        "gram": "count",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "sls": [
+                                    "somewhat old-fashioned"
+                                ],
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a boy or young man who delivers goods to customers from a store or restaurant"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "a boy or young man who delivers goods to customers from a store or restaurant"
+        ]
+    },
+    {
+        "meta": {
+            "id": "errand boy",
+            "uuid": "7d8ab3bf-0bef-425f-9ffb-0cea7d2d8ab5",
+            "src": "learners",
+            "section": "alpha",
+            "stems": [
+                "errand boy",
+                "errand boys"
+            ],
+            "app-shortdef": {
+                "hw": "errand boy",
+                "fl": "noun",
+                "def": [
+                    "{it}US{\/it} {bc} a person whose job is to run errands for important people"
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "three",
-            "image": ""
+        "hwi": {
+            "hw": "errand boy"
         },
-        {
-            "word": "four",
-            "image": ""
+        "fl": "noun",
+        "ins": [
+            {
+                "il": "plural",
+                "ifc": "~ boys",
+                "if": "errand boys"
+            }
+        ],
+        "gram": "count",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "sls": [
+                                    "US"
+                                ],
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a person whose job is to run errands for important people "
+                                    ],
+                                    [
+                                        "vis",
+                                        [
+                                            {
+                                                "t": "He worked his way up from {it}errand boy{\/it} to regional sales manager."
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        "snote",
+                                        [
+                                            [
+                                                "t",
+                                                "{it}Errand boy{\/it} is often used figuratively to criticize people by suggesting that they are controlled by someone more powerful."
+                                            ],
+                                            [
+                                                "vis",
+                                                [
+                                                    {
+                                                        "t": "The governor is nothing more than an {it}errand boy{\/it} for the big companies in his state."
+                                                    }
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "a person whose job is to run errands for important people"
+        ]
+    },
+    {
+        "meta": {
+            "id": "good old boy",
+            "uuid": "5e5a10aa-b93c-4dfd-92a5-e5d0153ba029",
+            "src": "learners",
+            "section": "alpha",
+            "target": {
+                "tuuid": "d1b97afe-c7b0-4693-a383-d6e4ce484063",
+                "tsrc": "collegiate"
+            },
+            "stems": [
+                "good old boy",
+                "good ol\u0027 boy",
+                "good ol\u0027 boys",
+                "good old boys",
+                "good ole boy",
+                "good ole boys",
+                "good ol boy"
+            ],
+            "app-shortdef": {
+                "hw": "good old boy",
+                "fl": "noun",
+                "def": [
+                    "{it}US{\/it}, {it}informal{\/it} {bc} a white man from the southern U.S. who has interests, beliefs, etc., that are commonly associated with white southern men"
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "five",
-            "image": ""
+        "hwi": {
+            "hw": "good old boy"
         },
-        {
-            "word": "six",
-            "image": ""
+        "vrs": [
+            {
+                "vl": "or",
+                "va": "good ol\u0027 boy"
+            },
+            {
+                "vl": "or",
+                "va": "good ole boy",
+                "prs": [
+                    {
+                        "ipa": "\u02c8g\u028ado\u028al\u02ccbo\u026a"
+                    }
+                ]
+            }
+        ],
+        "fl": "noun",
+        "ins": [
+            {
+                "il": "plural",
+                "ifc": "~ boys",
+                "if": "good old boys"
+            }
+        ],
+        "gram": "count",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "sls": [
+                                    "US",
+                                    "informal"
+                                ],
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}a white man from the southern U.S. who has interests, beliefs, etc., that are commonly associated with white southern men"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "a white man from the southern U.S. who has interests, beliefs, etc., that are commonly associated with white southern men"
+        ]
+    },
+    {
+        "meta": {
+            "id": "head boy",
+            "uuid": "ade9adf2-e206-4add-bd65-e407c662bdba",
+            "src": "learners",
+            "section": "alpha",
+            "stems": [
+                "head boy",
+                "head boys"
+            ],
+            "app-shortdef": {
+                "hw": "head boy",
+                "fl": "noun",
+                "def": [
+                    "{it}British{\/it} {bc} an older male student in a British school who is chosen to have special duties and to represent the school"
+                ]
+            },
+            "offensive": false
         },
-        {
-            "word": "seven",
-            "image": ""
+        "hwi": {
+            "hw": "head boy"
         },
-        {
-            "word": "eight",
-            "image": ""
-        },
-        {
-            "word": "nine",
-            "image": ""
-        },
-        {
-            "word": "ten",
-            "image": ""
-        },
-        {
-            "word": "rain",
-            "image": ""
-        },
-        {
-            "word": "big",
-            "image": ""
-        },
-        {
-            "word": "eat",
-            "image": ""
-        },
-        {
-            "word": "up",
-            "image": ""
-        },
-        {
-            "word": "down",
-            "image": ""
-        },
-        {
-            "word": "sleep",
-            "image": ""
-        },
-        {
-            "word": "yes",
-            "image": ""
-        },
-        {
-            "word": "no",
-            "image": ""
-        },
-        {
-            "word": "young",
-            "image": ""
-        },
-{
-"word": "blue"
-"image":""
-}
-
-    ]
-}
+        "fl": "noun",
+        "ins": [
+            {
+                "il": "plural",
+                "ifc": "~ boys",
+                "if": "head boys"
+            }
+        ],
+        "gram": "count",
+        "def": [
+            {
+                "sseq": [
+                    [
+                        [
+                            "sense",
+                            {
+                                "sls": [
+                                    "British"
+                                ],
+                                "dt": [
+                                    [
+                                        "text",
+                                        "{bc}an older male student in a British school who is chosen to have special duties and to represent the school"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "shortdef": [
+            "an older male student in a British school who is chosen to have special duties and to represent the school"
+        ]
+    }
+]
