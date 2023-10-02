@@ -19,3 +19,4 @@ let word = new Word();
 word.chooseWord();
 await word.getWordData(word.word);
 word.view();
+

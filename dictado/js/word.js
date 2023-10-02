@@ -40,8 +40,11 @@ export default class Word {
     this.audioSrc = document.querySelector("#audioSrc");
     this.fail = document.querySelector("#fail");
     this.win = document.querySelector("#win");
-
-
+    
+    this.inputBox = document.querySelector('#numb');
+    this.button = document.querySelector('#submitButton');
+    this.button.addEventListener("click", this.confirmTypedAnswer.bind(this));
+    
   }
   chooseWord(){
     this.index = randomIndex(0, this.wordList.length);
@@ -86,6 +89,7 @@ export default class Word {
     return this.wordData
   }
     view(){
+      
       let images = document.querySelectorAll(".placeholder")
         let index = 0;
         //get the word
@@ -135,10 +139,15 @@ export default class Word {
           this.audioButton.addEventListener("click", () => this.playAudio(this.audioSrc));
           this.audioButton.setAttribute("listenerAttached", true)
         }
-
+        
         
         this.wordElement.textContent = this.wordData[0].toUpperCase();
         this.wordElement.style.display = "none";
+
+
+
+
+        
       };
   confirmAnswer(e) {
     let clickedImage = e.target.id;
@@ -152,6 +161,27 @@ export default class Word {
       //console.log("incorrect",clickedImage,this.word)
 
     }
+  }
+  confirmTypedAnswer() {
+    let correctAnswer = this.word.toUpperCase();
+    let answer = document.getElementById("numb").value.toUpperCase();
+    console.log(`answer was: ${answer}, correct word is : ${correctAnswer}`)
+
+    
+
+    if (correctAnswer === answer) {
+      //console.log("correct",clickedImage,this.word);
+      this.wordElement.style.display = "block";
+      this.correctTyped();
+      
+
+    } else {
+      this.incorrectTyped();
+      document.getElementById("demo").innerHTML = "Intenta de Nuevo";
+      //console.log("incorrect",clickedImage,this.word)
+
+    }
+
   }
   playAudio(source){
     //console.log(source);
@@ -169,6 +199,21 @@ export default class Word {
     this.playAudio(this.fail);
     //this.displayRetry()
   }
+
+  async correctTyped() {
+    this.playAudio(this.win);
+    document.getElementById("demo").innerHTML = "Correcto";
+    document.getElementById("demo").innerHTML = "";
+    document.getElementById("numb").value = "";
+    await this.restart()
+  }
+  incorrectTyped() {
+    this.playAudio(this.fail);
+    //this.displayRetry()
+  }
+
+
+
   async restart(){
     this.chooseWord();
     await this.getWordData(this.word);
@@ -193,6 +238,8 @@ export default class Word {
     skip.addEventListener("click",() => {cards.removeChild(retryWindow); this.restart()})
     cards.appendChild(retryWindow)
   }
+
+
 
 }
 

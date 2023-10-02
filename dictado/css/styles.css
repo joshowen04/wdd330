@@ -145,4 +145,26 @@ img {
     max-width:100px;
 
 }
-
+#numb{
+    font-size:3em;
+    margin:auto;
+    max-width:90%
+}
+#submitButton{
+    font-size: 2em;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(278,35%,50%);
+    border-color: var(--accent-color-3);
+    margin-top:5px;
+    padding:5px;
+    background-color: var(--accent-color-1);
+    font-weight: bold;
+}
+h2{
+    text-align: center;
+}
+#answerSheet{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
