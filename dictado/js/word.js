@@ -131,6 +131,7 @@ export default class Word {
             currentImage.setAttribute("listenerAttached", true)
           }
           //this.images.appendChild(div);
+          currentImage.style.display = "none";
           imagesCount ++;
         });
         //console.log(imagesCount);
