@@ -23,8 +23,147 @@ let wordList = [
   "dictado",
   "robar",
   "banco",
-  "mueble"
+  "mueble",
+  "voy",
+  "taza",
+  "tiza",
+  "bola",
+  "vaca",
+  // "llora",
+  "polla",
+  "raya",
+  // "yoga",
+  // "llama",
+  "caja",
+  "zorro",
+  "cerro",
+  "barro",
+  "choza",
+  "gallo",
+  "babosa",
+  "cabeza",
+  "batido",
+  "medusa",
+  "basura",
+  "bigote",
+  // "butano",
+  "butaca",
+  "vestido",
+  "olla",
+  "almuerzo",
+  "cena",
+  "chorizo",
+  "caballo",
+  "cebolla",
+  "pollito",
+  "castillo",
+  "silla",
+  "amarillo",
+  "zorrillo",
+  // "llaves",
+  // "tortilla",
+  "ellos",
+  "lluvia",
+  "cabello",
+  "anillo",
+  "pastilla",
+  "parrilla",
+  // "sobrilla",
+  "calle",
+  "llavero",
+  "estrella",
+  "llanta",
+  // "lleva",
+  "llegar",
+  "granadilla",
+  "receta",
+  "maleta",
+  "cereza",
+  // "bolita",
+  // "besito",
+  "babero",
+  "balada",
+  "carroza",
+  "detalle",
+  // "cigarro",
+  "carrete",
+  "barriga",
+  "terreno",
+  "borrego",
+  "cabaña",
+  "belleza",
+  "billete",
+  "galleta",
+  // "popeye",
+  "cepillo",
+  "chaqueta",
+  "ballena",
+  "camello",
+  "ensayo",
+  "escena",
+  "once",
+  "frutilla",
+  "abeja",
+  "burro",
+  "princesa",
+  "yegua",
+  "yeso",
+  "yogurt",
+  "yunque",
+  "playa",
+  "hoyo",
+  // "coyote",
+  "inyección",
+  "raya",
+  "subrayar",
+  "payaso",
+  "ayudar",
+  "ventana",
+  "vino",
+  "vaquero",
+  // "violin",
+  "volar",
+  // "volcan",
+  "vampiro",
+  "vela",
+  "veinte",
+  // "venus",
+  "verde",
+  "veterinario",
+  "vacaciones",
+  // "vainilla",
+  "viento",
+  // "vacuna",
+  "gallina",
+  "sandia",
+  "bautizo",
+  "maceta",
+  "televisor",
+  // "kilo",
+  "hilo",
+  "humo",
+  "hola",
+  "rayo",
+  // "yate",
+  // "kimono",
+  "cerdo",
+  "pereza",
+  "vida",
+  "vivienda",
+  "yema",
+  "hormiga",
+  "celular",
+  "oveja",
+  "pobreza",
+  "compra",
+  "verduras",
+  "bicicleta",
+  "diversion",
+  "zapato",
+  "huevo",
+  "desayuno"
 ];
+
 
 
 
@@ -44,6 +183,15 @@ export default class Word {
     this.inputBox = document.querySelector('#numb');
     this.button = document.querySelector('#submitButton');
     this.button.addEventListener("click", this.confirmTypedAnswer.bind(this));
+    this.inputBox.addEventListener("keypress", (event)=>{
+      let keyCode = event.keyCode ? event.keyCode : event.which;
+
+     // 13 points the enter key
+     if(keyCode === 13) {
+       // call click function of the buttonn 
+       this.button.click();
+     }
+    });
     
   }
   chooseWord(){
@@ -128,6 +276,16 @@ export default class Word {
           //since i'm not recreating the element completely, duplicate event listeners were being created because i'm binding "this".
           if (!currentImage.getAttribute("listenerAttached")){
             currentImage.addEventListener("click", this.confirmAnswer.bind(this));
+           
+            // this.inputBox.addEventListener("keypress", (event)=>{
+            //   let keyCode = event.keyCode ? event.keyCode : event.which;
+        
+            //  // 13 points the enter key
+            //  if(keyCode === 13) {
+            //    // call click function of the buttonn 
+            //    this.button.click();
+            //  }
+            // });
             currentImage.setAttribute("listenerAttached", true)
           }
           //this.images.appendChild(div);
@@ -144,6 +302,8 @@ export default class Word {
         
         this.wordElement.textContent = this.wordData[0].toUpperCase();
         this.wordElement.style.display = "none";
+        this.playAudio(this.audioSrc)
+        console.log("should have played")
 
 
 
@@ -219,6 +379,7 @@ export default class Word {
     this.chooseWord();
     await this.getWordData(this.word);
     this.view();
+
     this.title.focus();
   }
   displayRetry(){
